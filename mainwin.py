@@ -6,7 +6,7 @@ from PyQt6.uic import loadUi
 app = QApplication(sys.argv)
 
 #cargar archivo .ui
-ventana =loadUi("Login.ui")
+ventana =loadUi("login3.ui")
 
 #cargar el archivo de estilos
 with open ("estilos.qss", "r") as file:

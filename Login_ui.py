@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         MainWindow.setStyleSheet(u"\n"
-"background-color: rgb(147, 255, 215);")
+"background-color: rgb(11, 240, 236);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.label = QLabel(self.centralwidget)
