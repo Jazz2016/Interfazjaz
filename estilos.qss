@@ -22,11 +22,13 @@ QPushButton {
     font: 700 8pt "Segoe UI";
     border: 2px solid rgb(0, 100, 200); /* Color del borde */
     border-radius: 12px; /* Bordes redondeados */
-    padding: 5px;
+    padding: 10px;
 }
 
 QPushButton:hover {
     background-color: rgb(0, 200, 200);
+    border: 5px solid blueviolet;
+    padding:5px;
 }
 
 /* Checkbox "Recordarme" */

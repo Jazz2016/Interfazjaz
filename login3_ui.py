@@ -40,7 +40,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(110, 30, 181, 41))
+        self.label.setGeometry(QRect(110, 20, 181, 41))
         self.label.setTabletTracking(False)
         self.label.setStyleSheet(u"background-color: rgb(87, 87, 131);\n"
 "color: rgb(255, 255, 255);\n"
@@ -49,7 +49,7 @@ class Ui_MainWindow(object):
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(90, 130, 221, 31))
+        self.lineEdit.setGeometry(QRect(90, 120, 221, 31))
         self.lineEdit.setCursor(QCursor(Qt.CursorShape.IBeamCursor))
         self.lineEdit.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
 "color: rgb(85, 255, 255);\n"
@@ -66,7 +66,7 @@ class Ui_MainWindow(object):
         self.lineEdit_2.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(120, 260, 171, 31))
+        self.pushButton.setGeometry(QRect(110, 270, 171, 41))
         self.pushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
 "color: rgb(0, 0, 0);\n"
@@ -87,7 +87,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(170, 170, 255)")
         self.checkBox = QCheckBox(self.centralwidget)
         self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setGeometry(QRect(90, 230, 181, 20))
+        self.checkBox.setGeometry(QRect(90, 240, 181, 20))
         self.checkBox.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.checkBox.setStyleSheet(u"font: 700 9pt \"Segoe UI\";\n"
 "background-color: rgb(170, 170, 255);\n"
@@ -95,7 +95,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 0);")
         self.commandLinkButton = QCommandLinkButton(self.centralwidget)
         self.commandLinkButton.setObjectName(u"commandLinkButton")
-        self.commandLinkButton.setGeometry(QRect(20, 310, 151, 41))
+        self.commandLinkButton.setGeometry(QRect(20, 320, 151, 41))
         self.commandLinkButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"background-color: rgb(170, 170, 255);\n"
 "font: 700 9pt \"Segoe UI\";\n"
@@ -103,7 +103,7 @@ class Ui_MainWindow(object):
 "border-color: rgb(0, 0, 0);")
         self.commandLinkButton_2 = QCommandLinkButton(self.centralwidget)
         self.commandLinkButton_2.setObjectName(u"commandLinkButton_2")
-        self.commandLinkButton_2.setGeometry(QRect(190, 310, 191, 41))
+        self.commandLinkButton_2.setGeometry(QRect(190, 320, 191, 41))
         self.commandLinkButton_2.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.commandLinkButton_2.setStyleSheet(u"background-color: rgb(170, 170, 255);\n"
 "border-color: rgb(0, 0, 0);\n"
