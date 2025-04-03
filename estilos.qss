@@ -1,2 +1,51 @@
+/* Estilo general para la ventana */
+QMainWindow {
+    background-color: rgb(170, 170, 255);
+}
+
+/* Estilos para QLabel */
+
+
+/* Caja de texto (usuario y contraseña) */
+QLineEdit {
+    background-color: rgb(0, 0, 0);
+    color: rgb(85, 255, 255);
+    border: 2px solid rgb(85, 170, 255); /* Color del borde */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 5px;
+}
+
+/* Botón de inicio de sesión */
+QPushButton {
+    background-color: rgb(0, 255, 255);
+    color: rgb(0, 0, 0);
+    font: 700 8pt "Segoe UI";
+    border: 2px solid rgb(0, 100, 200); /* Color del borde */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 5px;
+}
+
+QPushButton:hover {
+    background-color: rgb(0, 200, 200);
+}
+
+/* Checkbox "Recordarme" */
+QCheckBox {
+    font: 700 9pt "Segoe UI";
+    background-color: rgb(170, 170, 255);
+
+
+    padding: 3px;
+}
+
+/* Botones de enlace */
+QCommandLinkButton {
+    background-color: rgb(170, 170, 255);
+    font: 700 9pt "Segoe UI";
+    color: rgb(0, 0, 65);
+    border: 2px solid rgb(0, 0, 128); /* Color del borde */
+    border-radius: 10px;
+}
+
 
                       

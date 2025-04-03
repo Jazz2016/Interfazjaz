@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>600</height>
+    <width>400</width>
+    <height>430</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -15,6 +15,18 @@
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>430</height>
+   </size>
   </property>
   <property name="cursor">
    <cursorShape>ArrowCursor</cursorShape>
@@ -29,15 +41,15 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(222, 255, 103);
+   <string notr="true">background-color: rgb(170, 170, 255);
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>20</y>
+      <x>110</x>
+      <y>30</y>
       <width>181</width>
       <height>41</height>
      </rect>
@@ -46,7 +58,8 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 85, 0);
+     <string notr="true">background-color: rgb(87, 87, 131);
+color: rgb(255, 255, 255);
 font: 700 14pt &quot;Segoe UI&quot;;
 </string>
     </property>
@@ -60,18 +73,18 @@ font: 700 14pt &quot;Segoe UI&quot;;
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>90</x>
       <y>130</y>
       <width>221</width>
       <height>31</height>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
+     <cursorShape>IBeamCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(0, 0, 0);
-color: rgb(0, 255, 0);
+color: rgb(85, 255, 255);
 aling center;</string>
     </property>
     <property name="text">
@@ -84,17 +97,17 @@ aling center;</string>
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>90</x>
       <y>190</y>
       <width>221</width>
       <height>31</height>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
+     <cursorShape>IBeamCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(85, 255, 0);
+     <string notr="true">color: rgb(85, 255, 255);
 background-color: rgb(0, 0, 0);
 aling center;</string>
     </property>
@@ -111,35 +124,36 @@ aling center;</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>120</x>
       <y>260</y>
-      <width>191</width>
-      <height>41</height>
+      <width>171</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>OpenHandCursor</cursorShape>
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 170, 0);
-font: 700 14pt &quot;Segoe UI&quot;;
+     <string notr="true">background-color: rgb(0, 255, 255);
+color: rgb(0, 0, 0);
+font: 700 8pt &quot;Segoe UI&quot;;
 aling center;</string>
     </property>
     <property name="text">
-     <string>Aceptar</string>
+     <string>INICIAR SESIÓN</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>90</x>
       <y>100</y>
       <width>71</width>
       <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(222, 255, 103);
+     <string notr="true">background-color: rgb(170, 170, 255);
 font: 700 9pt &quot;Segoe UI&quot;;
 
 color: rgb(0, 0, 0);</string>
@@ -151,7 +165,7 @@ color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>90</x>
       <y>170</y>
       <width>71</width>
       <height>16</height>
@@ -160,10 +174,76 @@ color: rgb(0, 0, 0);</string>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 0);
 font: 700 9pt &quot;Segoe UI&quot;;
-background-color: rgb(222, 255, 103);</string>
+background-color: rgb(170, 170, 255)</string>
     </property>
     <property name="text">
      <string>Contraseña:</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>230</y>
+      <width>181</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 9pt &quot;Segoe UI&quot;;
+background-color: rgb(170, 170, 255);
+border-color: rgb(0, 0, 0);
+color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Recordarme</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>310</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(170, 170, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 65);
+border-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>¿No tienes cuenta?</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton_2">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>310</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(170, 170, 255);
+border-color: rgb(0, 0, 0);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 47);</string>
+    </property>
+    <property name="text">
+     <string>¿Olvidaste tu contraseña?</string>
     </property>
    </widget>
   </widget>
@@ -172,7 +252,7 @@ background-color: rgb(222, 255, 103);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>400</width>
      <height>33</height>
     </rect>
    </property>
