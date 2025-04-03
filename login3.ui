@@ -42,6 +42,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(170, 170, 255);
+alternate-background-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -49,7 +50,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>20</y>
+      <y>30</y>
       <width>181</width>
       <height>41</height>
      </rect>
@@ -58,7 +59,7 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(87, 87, 131);
+     <string notr="true">background-color: rgb(85, 0, 127);
 color: rgb(255, 255, 255);
 font: 700 14pt &quot;Segoe UI&quot;;
 </string>
@@ -82,9 +83,12 @@ font: 700 14pt &quot;Segoe UI&quot;;
     <property name="cursor">
      <cursorShape>IBeamCursor</cursorShape>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 0, 0);
-color: rgb(85, 255, 255);
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0)
 aling center;</string>
     </property>
     <property name="text">
@@ -107,8 +111,8 @@ aling center;</string>
      <cursorShape>IBeamCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(85, 255, 255);
-background-color: rgb(0, 0, 0);
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
 aling center;</string>
     </property>
     <property name="text">
@@ -124,9 +128,9 @@ aling center;</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>130</x>
       <y>270</y>
-      <width>171</width>
+      <width>141</width>
       <height>41</height>
      </rect>
     </property>
@@ -205,9 +209,9 @@ color: rgb(0, 0, 0);</string>
    <widget class="QCommandLinkButton" name="commandLinkButton">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>320</y>
-      <width>151</width>
+      <x>10</x>
+      <y>330</y>
+      <width>141</width>
       <height>41</height>
      </rect>
     </property>
@@ -216,9 +220,10 @@ color: rgb(0, 0, 0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(170, 170, 255);
-font: 700 9pt &quot;Segoe UI&quot;;
+font: 8pt &quot;Segoe UI&quot;;
+
 color: rgb(0, 0, 65);
-border-color: rgb(0, 0, 0);</string>
+</string>
     </property>
     <property name="text">
      <string>¿No tienes cuenta?</string>
@@ -227,9 +232,9 @@ border-color: rgb(0, 0, 0);</string>
    <widget class="QCommandLinkButton" name="commandLinkButton_2">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>320</y>
-      <width>191</width>
+      <x>220</x>
+      <y>330</y>
+      <width>171</width>
       <height>41</height>
      </rect>
     </property>
@@ -237,10 +242,11 @@ border-color: rgb(0, 0, 0);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(170, 170, 255);
-border-color: rgb(0, 0, 0);
-font: 700 9pt &quot;Segoe UI&quot;;
-color: rgb(0, 0, 47);</string>
+     <string notr="true">background-color:rgb(170, 170, 255);
+font: 8pt &quot;Segoe UI&quot;;
+
+color: rgb(0, 0, 47);
+</string>
     </property>
     <property name="text">
      <string>¿Olvidaste tu contraseña?</string>

@@ -35,14 +35,15 @@ class Ui_MainWindow(object):
         MainWindow.setMouseTracking(True)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet(u"background-color: rgb(170, 170, 255);\n"
+"alternate-background-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(110, 20, 181, 41))
+        self.label.setGeometry(QRect(110, 30, 181, 41))
         self.label.setTabletTracking(False)
-        self.label.setStyleSheet(u"background-color: rgb(87, 87, 131);\n"
+        self.label.setStyleSheet(u"background-color: rgb(85, 0, 127);\n"
 "color: rgb(255, 255, 255);\n"
 "font: 700 14pt \"Segoe UI\";\n"
 "")
@@ -51,22 +52,23 @@ class Ui_MainWindow(object):
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setGeometry(QRect(90, 120, 221, 31))
         self.lineEdit.setCursor(QCursor(Qt.CursorShape.IBeamCursor))
-        self.lineEdit.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
-"color: rgb(85, 255, 255);\n"
+        self.lineEdit.setAutoFillBackground(False)
+        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0)\n"
 "aling center;")
         self.lineEdit.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.lineEdit_2 = QLineEdit(self.centralwidget)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
         self.lineEdit_2.setGeometry(QRect(90, 190, 221, 31))
         self.lineEdit_2.setCursor(QCursor(Qt.CursorShape.IBeamCursor))
-        self.lineEdit_2.setStyleSheet(u"color: rgb(85, 255, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
+        self.lineEdit_2.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"background-color: rgb(255, 255, 255);\n"
 "aling center;")
         self.lineEdit_2.setEchoMode(QLineEdit.EchoMode.Password)
         self.lineEdit_2.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(110, 270, 171, 41))
+        self.pushButton.setGeometry(QRect(130, 270, 141, 41))
         self.pushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
 "color: rgb(0, 0, 0);\n"
@@ -95,20 +97,22 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 0);")
         self.commandLinkButton = QCommandLinkButton(self.centralwidget)
         self.commandLinkButton.setObjectName(u"commandLinkButton")
-        self.commandLinkButton.setGeometry(QRect(20, 320, 151, 41))
+        self.commandLinkButton.setGeometry(QRect(10, 330, 141, 41))
         self.commandLinkButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"background-color: rgb(170, 170, 255);\n"
-"font: 700 9pt \"Segoe UI\";\n"
+"font: 8pt \"Segoe UI\";\n"
+"\n"
 "color: rgb(0, 0, 65);\n"
-"border-color: rgb(0, 0, 0);")
+"")
         self.commandLinkButton_2 = QCommandLinkButton(self.centralwidget)
         self.commandLinkButton_2.setObjectName(u"commandLinkButton_2")
-        self.commandLinkButton_2.setGeometry(QRect(190, 320, 191, 41))
+        self.commandLinkButton_2.setGeometry(QRect(220, 330, 171, 41))
         self.commandLinkButton_2.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.commandLinkButton_2.setStyleSheet(u"background-color: rgb(170, 170, 255);\n"
-"border-color: rgb(0, 0, 0);\n"
-"font: 700 9pt \"Segoe UI\";\n"
-"color: rgb(0, 0, 47);")
+        self.commandLinkButton_2.setStyleSheet(u"background-color:rgb(170, 170, 255);\n"
+"font: 8pt \"Segoe UI\";\n"
+"\n"
+"color: rgb(0, 0, 47);\n"
+"")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
