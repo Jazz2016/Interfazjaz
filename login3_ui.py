@@ -95,15 +95,6 @@ class Ui_MainWindow(object):
 "background-color: rgb(170, 170, 255);\n"
 "border-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 0, 0);")
-        self.commandLinkButton = QCommandLinkButton(self.centralwidget)
-        self.commandLinkButton.setObjectName(u"commandLinkButton")
-        self.commandLinkButton.setGeometry(QRect(10, 330, 141, 41))
-        self.commandLinkButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.commandLinkButton.setStyleSheet(u"background-color: rgb(170, 170, 255);\n"
-"font: 8pt \"Segoe UI\";\n"
-"\n"
-"color: rgb(0, 0, 65);\n"
-"")
         self.commandLinkButton_2 = QCommandLinkButton(self.centralwidget)
         self.commandLinkButton_2.setObjectName(u"commandLinkButton_2")
         self.commandLinkButton_2.setGeometry(QRect(220, 330, 171, 41))
@@ -113,6 +104,14 @@ class Ui_MainWindow(object):
 "\n"
 "color: rgb(0, 0, 47);\n"
 "")
+        self.btncrearcuenta = QPushButton(self.centralwidget)
+        self.btncrearcuenta.setObjectName(u"btncrearcuenta")
+        self.btncrearcuenta.setGeometry(QRect(20, 330, 141, 41))
+        self.btncrearcuenta.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btncrearcuenta.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
+"color: rgb(0, 0, 0);\n"
+"font: 700 8pt \"Segoe UI\";\n"
+"aling center;")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -136,7 +135,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Usuario:", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Contrase\u00f1a:", None))
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Recordarme", None))
-        self.commandLinkButton.setText(QCoreApplication.translate("MainWindow", u"\u00bfNo tienes cuenta?", None))
         self.commandLinkButton_2.setText(QCoreApplication.translate("MainWindow", u"\u00bfOlvidaste tu contrase\u00f1a?", None))
+        self.btncrearcuenta.setText(QCoreApplication.translate("MainWindow", u"Crear cuenta", None))
     # retranslateUi
 
