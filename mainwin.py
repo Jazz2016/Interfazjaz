@@ -2,7 +2,7 @@ import sys
 import pymysql
 from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6.uic import loadUi
-from connectionSQL import conexionDB, cerrarConexion
+from Conexion import conexionDB, cerrarConexion # type: ignore
 
 class LoginWindow(QMainWindow):
     def __init__(self):
