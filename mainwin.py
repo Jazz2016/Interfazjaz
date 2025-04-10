@@ -37,6 +37,14 @@ class LoginWindow(QMainWindow):
         miConexion, cur = conexionDB()
         if miConexion and cur:
             try:
+                # Verificar si el usuario ya existe
+                cur.execute("SELECT * FROM usuario WHERE NameUsuario = %s", (username,))
+                if cur.fetchone():
+                    self.new_user_ventana.label_4.setText("Este usuario ya está registrado.")
+                    self.new_user_ventana.label_4.setStyleSheet("color: red;")
+                    return
+
+                # Insertar nuevo usuario
                 cur.execute("INSERT INTO usuario(NameUsuario, Password) VALUES (%s, %s)", (username, password))
                 miConexion.commit()
                 self.new_user_ventana.label_4.setText("Usuario registrado correctamente.")
@@ -47,10 +55,6 @@ class LoginWindow(QMainWindow):
                 self.new_user_ventana.textEdit2.clear()
                 self.new_user_ventana.textEdit3.clear()
 
-            except pymysql.IntegrityError:
-                # Mostrar mensaje si el usuario ya está registrado
-                self.new_user_ventana.label_4.setText("Este usuario ya está registrado.")
-                self.new_user_ventana.label_4.setStyleSheet("color: red;")
             except pymysql.Error as e:
                 self.new_user_ventana.label_4.setText(f"Error al registrar usuario: {e}")
                 self.new_user_ventana.label_4.setStyleSheet("color: red;")
