@@ -71,7 +71,7 @@ font: 700 14pt &quot;Segoe UI&quot;;
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="textEdit">
     <property name="geometry">
      <rect>
       <x>90</x>
