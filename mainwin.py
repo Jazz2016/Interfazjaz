@@ -14,7 +14,7 @@ class LoginWindow(QMainWindow):
     def abrir_nuevo_usuario(self):
         """Abrir la ventana de registro"""
         self.new_user_ventana = QMainWindow()
-        loadUi("NewUser.ui", self.new_user_ventana)
+        loadUi("crearcuenta.ui", self.new_user_ventana)
         self.new_user_ventana.btnRegistrar.clicked.connect(self.registrar_usuario)
         self.new_user_ventana.show()
 
