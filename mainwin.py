@@ -1,6 +1,6 @@
 import sys
 import pymysql
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel
 from PyQt6.uic import loadUi
 from Conexion import conexionDB, cerrarConexion # type: ignore
 
@@ -18,49 +18,51 @@ class LoginWindow(QMainWindow):
         self.new_user_ventana.btnRegistrar.clicked.connect(self.registrar_usuario)
         self.new_user_ventana.show()
 
-   
+    def registrar_usuario(self):
+        """Registrar un nuevo usuario"""
+        # Obtener los datos de los campos
+        username = self.new_user_ventana.textEdit.text().strip()  # Usa .text() si es un QLineEdit
+        password = self.new_user_ventana.textEdit2.text().strip()  # También .text() para el otro campo
 
-def registrar_usuario(self):
-    # Obtener los datos de los campos
-    username = self.new_user_ventana.textEdit.text().strip()  # Usa .text() si es un QLineEdit
-    password = self.new_user_ventana.textEdit2.text().strip()  # También .text() para el otro campo
+        # Verificar que los campos no estén vacíos
+        if not username or not password:
+            self.new_user_ventana.labelMensaje.setText("Debe ingresar un nombre y una contraseña.")
+            return
 
-    # Verificar que los campos no estén vacíos
-    if not username or not password:
-        QMessageBox.warning(self.new_user_ventana, "Campos vacíos", "Debe ingresar un nombre y una contraseña.")
-        return
+        # Conectar con la base de datos
+        miConexion, cur = conexionDB()
+        if miConexion and cur:
+            try:
+                # Intentamos registrar el usuario
+                cur.execute("INSERT INTO usuario(NameUsuario, Password) VALUES (%s, %s)", (username, password))
+                miConexion.commit()
 
-    # Conectar con la base de datos
-    miConexion, cur = conexionDB()
-    if miConexion and cur:
-        try:
-            # Intentamos registrar el usuario
-            cur.execute("INSERT INTO usuario(NameUsuario, Password) VALUES (%s, %s)", (username, password))
-            miConexion.commit()
+                # Mostrar mensaje de éxito en el QLabel
+                self.new_user_ventana.labelMensaje.setText("Usuario registrado correctamente.")
+                self.new_user_ventana.labelMensaje.setStyleSheet("color: green;")
+                self.new_user_ventana.close()  # Cerrar ventana después del registro
 
-            # Mostrar mensaje de éxito
-            QMessageBox.information(self.new_user_ventana, "Registro exitoso", "Usuario registrado correctamente.")
-            self.new_user_ventana.close()  # Cerrar ventana después del registro
-
-        except pymysql.IntegrityError:
-            # Si hay un error de integridad, es porque el usuario ya existe
-            QMessageBox.warning(self.new_user_ventana, "Usuario duplicado", "Este usuario ya está registrado.")
-        
-        except pymysql.Error as e:
-            # Cualquier otro error relacionado con la base de datos
-            QMessageBox.critical(self.new_user_ventana, "Error", f"Error al registrar usuario: {e}")
-        
-        finally:
-            cerrarConexion(miConexion)
-    else:
-        # Si no se pudo conectar a la base de datos
-        QMessageBox.critical(self.new_user_ventana, "Conexión fallida", "No se pudo conectar a la base de datos.")
-
+            except pymysql.IntegrityError:
+                # Si hay un error de integridad, es porque el usuario ya existe
+                self.new_user_ventana.labelMensaje.setText("Este usuario ya está registrado.")
+                self.new_user_ventana.labelMensaje.setStyleSheet("color: red;")
+            
+            except pymysql.Error as e:
+                # Cualquier otro error relacionado con la base de datos
+                self.new_user_ventana.labelMensaje.setText(f"Error al registrar usuario: {e}")
+                self.new_user_ventana.labelMensaje.setStyleSheet("color: red;")
+            
+            finally:
+                cerrarConexion(miConexion)
+        else:
+            # Si no se pudo conectar a la base de datos
+            self.new_user_ventana.labelMensaje.setText("No se pudo conectar a la base de datos.")
+            self.new_user_ventana.labelMensaje.setStyleSheet("color: red;")
     
     def iniciar_sesion(self):
+        """Iniciar sesión del usuario"""
         username = self.lineEdit1.text().strip()
         password = self.lineEdit2.text().strip()
-
 
         if not username or not password:
             print("Por favor, ingrese nombre de usuario y contraseña.")
