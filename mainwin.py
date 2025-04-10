@@ -68,30 +68,35 @@ class LoginWindow(QMainWindow):
             self.new_user_ventana.label_4.setStyleSheet("color: red;")
     
     def iniciar_sesion(self):
-        """Iniciar sesión del usuario"""
-        username = self.lineEdit1.text().strip()
-        password = self.lineEdit2.text().strip()
+    """Iniciar sesión del usuario"""
+    username = self.lineEdit1.text().strip()
+    password = self.lineEdit2.text().strip()
 
-        if not username or not password:
-            print("Por favor, ingrese nombre de usuario y contraseña.")
-            return
+    if not username or not password:
+        self.label_4.setText("Por favor, ingrese nombre de usuario y contraseña.")
+        self.label_4.setStyleSheet("color: red;")
+        return
 
-        miConexion, cur = conexionDB()
-        if miConexion and cur:
-            try:
-                cur.execute("SELECT * FROM usuario WHERE NameUsuario = %s AND Password = %s", (username, password))
-                usuario = cur.fetchone()
-                if usuario:
-                    print("Inicio de sesión exitoso.")
-                    # Aquí puedes abrir otra ventana o seguir con la lógica principal
-                else:
-                    print("Usuario o contraseña incorrectos.")
-            except pymysql.Error as e:
-                print(f"Error al verificar usuario: {e}")
-            finally:
-                cerrarConexion(miConexion)
-        else:
-            print("No se pudo conectar a la base de datos.")
+    miConexion, cur = conexionDB()
+    if miConexion and cur:
+        try:
+            cur.execute("SELECT * FROM usuario WHERE NameUsuario = %s AND Password = %s", (username, password))
+            usuario = cur.fetchone()
+            if usuario:
+                self.label_4.setText("Inicio de sesión exitoso.")
+                self.label_4.setStyleSheet("color: green;")
+                # Aquí puedes abrir otra ventana o seguir con la lógica principal
+            else:
+                self.label_4.setText("Usuario o contraseña incorrectos.")
+                self.label_4.setStyleSheet("color: red;")
+        except pymysql.Error as e:
+            self.label_4.setText(f"Error al verificar usuario: {e}")
+            self.label_4.setStyleSheet("color: red;")
+        finally:
+            cerrarConexion(miConexion)
+    else:
+        self.label_4.setText("No se pudo conectar a la base de datos.")
+        self.label_4.setStyleSheet("color: red;")
 
 # Inicializar la aplicación
 app = QApplication(sys.argv)
