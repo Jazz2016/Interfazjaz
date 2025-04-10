@@ -98,7 +98,7 @@ color: rgb(0, 0, 0);</string>
 color: rgb(0, 0, 0);</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnRegistrar">
     <property name="geometry">
      <rect>
       <x>220</x>

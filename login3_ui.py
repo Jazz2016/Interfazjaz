@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'login3.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.3
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -66,11 +66,11 @@ class Ui_MainWindow(object):
 "aling center;")
         self.lineEdit_2.setEchoMode(QLineEdit.EchoMode.Password)
         self.lineEdit_2.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(130, 270, 141, 41))
-        self.pushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.pushButton.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
+        self.btnIniciarSesion = QPushButton(self.centralwidget)
+        self.btnIniciarSesion.setObjectName(u"btnIniciarSesion")
+        self.btnIniciarSesion.setGeometry(QRect(130, 270, 141, 41))
+        self.btnIniciarSesion.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btnIniciarSesion.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
 "color: rgb(0, 0, 0);\n"
 "font: 700 8pt \"Segoe UI\";\n"
 "aling center;")
@@ -131,7 +131,7 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"Login ERP", None))
         self.lineEdit.setText("")
         self.lineEdit_2.setText("")
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"INICIAR SESI\u00d3N", None))
+        self.btnIniciarSesion.setText(QCoreApplication.translate("MainWindow", u"INICIAR SESI\u00d3N", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Usuario:", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Contrase\u00f1a:", None))
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Recordarme", None))

@@ -125,7 +125,7 @@ aling center;</string>
      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnIniciarSesion">
     <property name="geometry">
      <rect>
       <x>130</x>
