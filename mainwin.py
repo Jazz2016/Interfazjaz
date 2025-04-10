@@ -7,32 +7,32 @@ from connectionSQL import conexionDB, cerrarConexion
 class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ventana = loadUi("login.ui", self)
-        self.ventana.btncrearcuenta.clicked.connect(self.abrir_nuevo_usuario)  # Botón para crear cuenta
-        self.ventana.btnIniciarSesion.clicked.connect(self.iniciar_sesion) # Botón para iniciar
-    
+        loadUi("login3.ui", self)  # Carga directamente en self
+        self.btncrearcuenta.clicked.connect(self.abrir_nuevo_usuario)
+        self.btnIniciarSesion.clicked.connect(self.iniciar_sesion)
+
     def abrir_nuevo_usuario(self):
         """Abrir la ventana de registro"""
-        self.new_user_ventana = loadUi("NewUser.ui", self)
-        self.new_user_ventana.btnRegistrar.clicked.connect(self.registrar_usuario)  # Conectar el botón al método
+        self.new_user_ventana = QMainWindow()
+        loadUi("NewUser.ui", self.new_user_ventana)
+        self.new_user_ventana.btnRegistrar.clicked.connect(self.registrar_usuario)
         self.new_user_ventana.show()
 
-        #FUNCION PARA REGISTRAR USUARIO
     def registrar_usuario(self):
-        username = self.new_user_ventana.textEdit.toPlainText().strip()  # Obtener el texto de Nombre
-        password = self.new_user_ventana.textEdit2.toPlainText().strip()  # Obtener el texto de Contraseña
+        username = self.new_user_ventana.textEdit.toPlainText().strip()
+        password = self.new_user_ventana.textEdit2.toPlainText().strip()
 
         if not username or not password:
             print("Deben ingresar un nombre y una contraseña válida.")
             return
         
-        # Conectar con la base de datos e insertar los datos
         miConexion, cur = conexionDB()
         if miConexion and cur:
             try:
                 cur.execute("INSERT INTO usuario(NameUsuario, Password) VALUES (%s, %s)", (username, password))
                 miConexion.commit()
                 print("Usuario registrado correctamente.")
+                self.new_user_ventana.close()  # Cierra ventana luego del registro
             except pymysql.Error as e:
                 print(f"Error al registrar usuario: {e}")
             finally:
@@ -41,25 +41,23 @@ class LoginWindow(QMainWindow):
             print("No se pudo conectar a la base de datos.")
     
     def iniciar_sesion(self):
-        username = self.ventana.textEdit.toPlainText().strip()
-        password = self.ventana.textEdit2.toPlainText().strip()
+        username = self.textEdit.toPlainText().strip()
+        password = self.textEdit2.toPlainText().strip()
+
         if not username or not password:
             print("Por favor, ingrese nombre de usuario y contraseña.")
             return
 
-        # Conectar con la base de datos
         miConexion, cur = conexionDB()
         if miConexion and cur:
             try:
                 cur.execute("SELECT * FROM usuario WHERE NameUsuario = %s AND Password = %s", (username, password))
-                usuario = cur.fetchone()  # Obtener el primer resultado
-
+                usuario = cur.fetchone()
                 if usuario:
                     print("Inicio de sesión exitoso.")
-                    # Aquí puedes redirigir a la ventana principal
+                    # Aquí puedes abrir otra ventana o seguir con la lógica principal
                 else:
                     print("Usuario o contraseña incorrectos.")
-
             except pymysql.Error as e:
                 print(f"Error al verificar usuario: {e}")
             finally:
@@ -67,17 +65,17 @@ class LoginWindow(QMainWindow):
         else:
             print("No se pudo conectar a la base de datos.")
 
-
 # Inicializar la aplicación
 app = QApplication(sys.argv)
 
-# Cargar estilos desde un archivo externo
-with open("styles.qss", "r") as file:
-    app.setStyleSheet(file.read())
+# Cargar estilos desde un archivo externo (opcional)
+try:
+    with open("estilos.qss", "r") as file:
+        app.setStyleSheet(file.read())
+except FileNotFoundError:
+    print("Archivo de estilos no encontrado, se usará el estilo por defecto.")
 
 ventana = LoginWindow()
 ventana.show()
 
 sys.exit(app.exec())
-
-
