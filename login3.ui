@@ -231,9 +231,9 @@ aling center;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>120</x>
       <y>330</y>
-      <width>191</width>
+      <width>321</width>
       <height>20</height>
      </rect>
     </property>
