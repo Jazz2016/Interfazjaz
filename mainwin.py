@@ -1,13 +1,13 @@
 import sys
 import pymysql
-from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel
+from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6.uic import loadUi
 from Conexion import conexionDB, cerrarConexion  # type: ignore
 
 class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        loadUi("login3.ui", self)  # Carga directamente en self
+        loadUi("login3.ui", self)
         self.btncrearcuenta.clicked.connect(self.abrir_nuevo_usuario)
         self.btnIniciarSesion.clicked.connect(self.iniciar_sesion)
 
@@ -20,88 +20,72 @@ class LoginWindow(QMainWindow):
 
     def registrar_usuario(self):
         """Registrar un nuevo usuario"""
-        # Obtener los datos de los campos
-        username = self.new_user_ventana.textEdit.toPlainText().strip()  # Usa .toPlainText() si es un QTextEdit
-        password = self.new_user_ventana.textEdit2.toPlainText().strip()  # También .toPlainText() para el otro campo
-        password2 = self.new_user_ventana.textEdit3.toPlainText().strip()  # Campo "Introducir nuevamente la contraseña"
+        username = self.new_user_ventana.textEdit.toPlainText().strip()
+        password = self.new_user_ventana.textEdit2.toPlainText().strip()
+        password2 = self.new_user_ventana.textEdit3.toPlainText().strip()
 
-        # Verificar que los campos no estén vacíos
         if not username or not password or not password2:
             self.new_user_ventana.label_4.setText("Debe ingresar un nombre y las contraseñas.")
             self.new_user_ventana.label_4.setStyleSheet("color: red;")
             return
-        
-        # Verificar que las contraseñas coincidan
+
         if password != password2:
             self.new_user_ventana.label_4.setText("Las contraseñas no coinciden.")
             self.new_user_ventana.label_4.setStyleSheet("color: red;")
             return
 
-        # Conectar con la base de datos
         miConexion, cur = conexionDB()
         if miConexion and cur:
             try:
-                # Intentamos registrar el usuario
                 cur.execute("INSERT INTO usuario(NameUsuario, Password) VALUES (%s, %s)", (username, password))
                 miConexion.commit()
-
-                # Mostrar mensaje de éxito en el QLabel de la ventana de registro
                 self.new_user_ventana.label_4.setText("Usuario registrado correctamente.")
                 self.new_user_ventana.label_4.setStyleSheet("color: green;")
-                # No cerramos la ventana inmediatamente, dejamos que el usuario vea el mensaje.
-
             except pymysql.IntegrityError:
-                # Si hay un error de integridad, es porque el usuario ya existe
                 self.new_user_ventana.label_4.setText("Este usuario ya está registrado.")
                 self.new_user_ventana.label_4.setStyleSheet("color: red;")
-            
             except pymysql.Error as e:
-                # Cualquier otro error relacionado con la base de datos
                 self.new_user_ventana.label_4.setText(f"Error al registrar usuario: {e}")
                 self.new_user_ventana.label_4.setStyleSheet("color: red;")
-            
             finally:
                 cerrarConexion(miConexion)
         else:
-            # Si no se pudo conectar a la base de datos
             self.new_user_ventana.label_4.setText("No se pudo conectar a la base de datos.")
             self.new_user_ventana.label_4.setStyleSheet("color: red;")
-    
+
     def iniciar_sesion(self):
-    """Iniciar sesión del usuario"""
-    username = self.lineEdit1.text().strip()
-    password = self.lineEdit2.text().strip()
+        """Iniciar sesión del usuario"""
+        username = self.lineEdit1.text().strip()
+        password = self.lineEdit2.text().strip()
 
-    if not username or not password:
-        self.label_4.setText("Por favor, ingrese nombre de usuario y contraseña.")
-        self.label_4.setStyleSheet("color: red;")
-        return
-
-    miConexion, cur = conexionDB()
-    if miConexion and cur:
-        try:
-            cur.execute("SELECT * FROM usuario WHERE NameUsuario = %s AND Password = %s", (username, password))
-            usuario = cur.fetchone()
-            if usuario:
-                self.label_4.setText("Inicio de sesión exitoso.")
-                self.label_4.setStyleSheet("color: green;")
-                # Aquí puedes abrir otra ventana o seguir con la lógica principal
-            else:
-                self.label_4.setText("Usuario o contraseña incorrectos.")
-                self.label_4.setStyleSheet("color: red;")
-        except pymysql.Error as e:
-            self.label_4.setText(f"Error al verificar usuario: {e}")
+        if not username or not password:
+            self.label_4.setText("Por favor, ingrese nombre de usuario y contraseña.")
             self.label_4.setStyleSheet("color: red;")
-        finally:
-            cerrarConexion(miConexion)
-    else:
-        self.label_4.setText("No se pudo conectar a la base de datos.")
-        self.label_4.setStyleSheet("color: red;")
+            return
+
+        miConexion, cur = conexionDB()
+        if miConexion and cur:
+            try:
+                cur.execute("SELECT * FROM usuario WHERE NameUsuario = %s AND Password = %s", (username, password))
+                usuario = cur.fetchone()
+                if usuario:
+                    self.label_4.setText("Inicio de sesión exitoso.")
+                    self.label_4.setStyleSheet("color: green;")
+                else:
+                    self.label_4.setText("Usuario o contraseña incorrectos.")
+                    self.label_4.setStyleSheet("color: red;")
+            except pymysql.Error as e:
+                self.label_4.setText(f"Error al verificar usuario: {e}")
+                self.label_4.setStyleSheet("color: red;")
+            finally:
+                cerrarConexion(miConexion)
+        else:
+            self.label_4.setText("No se pudo conectar a la base de datos.")
+            self.label_4.setStyleSheet("color: red;")
 
 # Inicializar la aplicación
 app = QApplication(sys.argv)
 
-# Cargar estilos desde un archivo externo (opcional)
 try:
     with open("estilos.qss", "r") as file:
         app.setStyleSheet(file.read())
