@@ -41,7 +41,14 @@ class LoginWindow(QMainWindow):
                 miConexion.commit()
                 self.new_user_ventana.label_4.setText("Usuario registrado correctamente.")
                 self.new_user_ventana.label_4.setStyleSheet("color: green;")
+
+                # Limpiar campos
+                self.new_user_ventana.textEdit.clear()
+                self.new_user_ventana.textEdit2.clear()
+                self.new_user_ventana.textEdit3.clear()
+
             except pymysql.IntegrityError:
+                # Mostrar mensaje si el usuario ya está registrado
                 self.new_user_ventana.label_4.setText("Este usuario ya está registrado.")
                 self.new_user_ventana.label_4.setStyleSheet("color: red;")
             except pymysql.Error as e:
@@ -71,6 +78,8 @@ class LoginWindow(QMainWindow):
                 if usuario:
                     self.label_4.setText("Inicio de sesión exitoso.")
                     self.label_4.setStyleSheet("color: green;")
+                    self.lineEdit1.clear()
+                    self.lineEdit2.clear()
                 else:
                     self.label_4.setText("Usuario o contraseña incorrectos.")
                     self.label_4.setStyleSheet("color: red;")
