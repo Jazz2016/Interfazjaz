@@ -48,24 +48,24 @@ class Ui_MainWindow(object):
 "font: 700 14pt \"Segoe UI\";\n"
 "")
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.textEdit = QLineEdit(self.centralwidget)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setGeometry(QRect(90, 120, 221, 31))
-        self.textEdit.setCursor(QCursor(Qt.CursorShape.IBeamCursor))
-        self.textEdit.setAutoFillBackground(False)
-        self.textEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.lineEdit1 = QLineEdit(self.centralwidget)
+        self.lineEdit1.setObjectName(u"lineEdit1")
+        self.lineEdit1.setGeometry(QRect(90, 120, 221, 31))
+        self.lineEdit1.setCursor(QCursor(Qt.CursorShape.IBeamCursor))
+        self.lineEdit1.setAutoFillBackground(False)
+        self.lineEdit1.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0)\n"
 "aling center;")
-        self.textEdit.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
-        self.lineEdit_2 = QLineEdit(self.centralwidget)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setGeometry(QRect(90, 190, 221, 31))
-        self.lineEdit_2.setCursor(QCursor(Qt.CursorShape.IBeamCursor))
-        self.lineEdit_2.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.lineEdit1.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.lineEdit2 = QLineEdit(self.centralwidget)
+        self.lineEdit2.setObjectName(u"lineEdit2")
+        self.lineEdit2.setGeometry(QRect(90, 190, 221, 31))
+        self.lineEdit2.setCursor(QCursor(Qt.CursorShape.IBeamCursor))
+        self.lineEdit2.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(255, 255, 255);\n"
 "aling center;")
-        self.lineEdit_2.setEchoMode(QLineEdit.EchoMode.Password)
-        self.lineEdit_2.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.lineEdit2.setEchoMode(QLineEdit.EchoMode.Password)
+        self.lineEdit2.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.btnIniciarSesion = QPushButton(self.centralwidget)
         self.btnIniciarSesion.setObjectName(u"btnIniciarSesion")
         self.btnIniciarSesion.setGeometry(QRect(130, 270, 141, 41))
@@ -129,8 +129,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Inicio de sesi\u00f3n", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Login ERP", None))
-        self.textEdit.setText("")
-        self.lineEdit_2.setText("")
+        self.lineEdit1.setText("")
+        self.lineEdit2.setText("")
         self.btnIniciarSesion.setText(QCoreApplication.translate("MainWindow", u"INICIAR SESI\u00d3N", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Usuario:", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Contrase\u00f1a:", None))

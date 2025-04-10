@@ -41,8 +41,9 @@ class LoginWindow(QMainWindow):
             print("No se pudo conectar a la base de datos.")
     
     def iniciar_sesion(self):
-        username = self.textEdit.toPlainText().strip()
-        password = self.textEdit2.toPlainText().strip()
+        username = self.lineEdit1.text().strip()
+        password = self.lineEdit2.text().strip()
+
 
         if not username or not password:
             print("Por favor, ingrese nombre de usuario y contraseña.")
