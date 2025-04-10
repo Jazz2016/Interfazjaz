@@ -81,6 +81,6 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Ingresa contrase\u00f1a", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Ingresa contrase\u00f1a nuevamente", None))
         self.btnRegistrar.setText(QCoreApplication.translate("MainWindow", u"Registrar", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"esta registrado", None))
+        self.label_4.setText("")
     # retranslateUi
 

@@ -128,7 +128,7 @@ background-color: rgb(170, 170, 255);</string>
      <string notr="true">color: rgb(0, 0, 127);</string>
     </property>
     <property name="text">
-     <string>esta registrado</string>
+     <string/>
     </property>
     <property name="textFormat">
      <enum>Qt::TextFormat::AutoText</enum>
