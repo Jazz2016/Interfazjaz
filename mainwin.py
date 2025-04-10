@@ -18,27 +18,44 @@ class LoginWindow(QMainWindow):
         self.new_user_ventana.btnRegistrar.clicked.connect(self.registrar_usuario)
         self.new_user_ventana.show()
 
-    def registrar_usuario(self):
-        username = self.new_user_ventana.textEdit.toPlainText().strip()
-        password = self.new_user_ventana.textEdit2.toPlainText().strip()
+   
 
-        if not username or not password:
-            print("Deben ingresar un nombre y una contraseña válida.")
-            return
+def registrar_usuario(self):
+    # Obtener los datos de los campos
+    username = self.new_user_ventana.textEdit.text().strip()  # Usa .text() si es un QLineEdit
+    password = self.new_user_ventana.textEdit2.text().strip()  # También .text() para el otro campo
+
+    # Verificar que los campos no estén vacíos
+    if not username or not password:
+        QMessageBox.warning(self.new_user_ventana, "Campos vacíos", "Debe ingresar un nombre y una contraseña.")
+        return
+
+    # Conectar con la base de datos
+    miConexion, cur = conexionDB()
+    if miConexion and cur:
+        try:
+            # Intentamos registrar el usuario
+            cur.execute("INSERT INTO usuario(NameUsuario, Password) VALUES (%s, %s)", (username, password))
+            miConexion.commit()
+
+            # Mostrar mensaje de éxito
+            QMessageBox.information(self.new_user_ventana, "Registro exitoso", "Usuario registrado correctamente.")
+            self.new_user_ventana.close()  # Cerrar ventana después del registro
+
+        except pymysql.IntegrityError:
+            # Si hay un error de integridad, es porque el usuario ya existe
+            QMessageBox.warning(self.new_user_ventana, "Usuario duplicado", "Este usuario ya está registrado.")
         
-        miConexion, cur = conexionDB()
-        if miConexion and cur:
-            try:
-                cur.execute("INSERT INTO usuario(NameUsuario, Password) VALUES (%s, %s)", (username, password))
-                miConexion.commit()
-                print("Usuario registrado correctamente.")
-                self.new_user_ventana.close()  # Cierra ventana luego del registro
-            except pymysql.Error as e:
-                print(f"Error al registrar usuario: {e}")
-            finally:
-                cerrarConexion(miConexion)
-        else:
-            print("No se pudo conectar a la base de datos.")
+        except pymysql.Error as e:
+            # Cualquier otro error relacionado con la base de datos
+            QMessageBox.critical(self.new_user_ventana, "Error", f"Error al registrar usuario: {e}")
+        
+        finally:
+            cerrarConexion(miConexion)
+    else:
+        # Si no se pudo conectar a la base de datos
+        QMessageBox.critical(self.new_user_ventana, "Conexión fallida", "No se pudo conectar a la base de datos.")
+
     
     def iniciar_sesion(self):
         username = self.lineEdit1.text().strip()
