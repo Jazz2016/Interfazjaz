@@ -23,10 +23,17 @@ class LoginWindow(QMainWindow):
         # Obtener los datos de los campos
         username = self.new_user_ventana.textEdit.toPlainText().strip()  # Usa .toPlainText() si es un QTextEdit
         password = self.new_user_ventana.textEdit2.toPlainText().strip()  # También .toPlainText() para el otro campo
+        password2 = self.new_user_ventana.textEdit3.toPlainText().strip()  # Campo "Introducir nuevamente la contraseña"
 
         # Verificar que los campos no estén vacíos
-        if not username or not password:
-            self.new_user_ventana.label_4.setText("Debe ingresar un nombre y una contraseña.")
+        if not username or not password or not password2:
+            self.new_user_ventana.label_4.setText("Debe ingresar un nombre y las contraseñas.")
+            self.new_user_ventana.label_4.setStyleSheet("color: red;")
+            return
+        
+        # Verificar que las contraseñas coincidan
+        if password != password2:
+            self.new_user_ventana.label_4.setText("Las contraseñas no coinciden.")
             self.new_user_ventana.label_4.setStyleSheet("color: red;")
             return
 
