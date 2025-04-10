@@ -56,6 +56,11 @@ class Ui_MainWindow(object):
         self.btnRegistrar.setGeometry(QRect(220, 330, 121, 31))
         self.btnRegistrar.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(170, 170, 255);")
+        self.label_4 = QLabel(self.centralwidget)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(140, 430, 261, 31))
+        self.label_4.setStyleSheet(u"color: rgb(0, 0, 127);")
+        self.label_4.setTextFormat(Qt.TextFormat.AutoText)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -76,5 +81,6 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Ingresa contrase\u00f1a", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Ingresa contrase\u00f1a nuevamente", None))
         self.btnRegistrar.setText(QCoreApplication.translate("MainWindow", u"Registrar", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"esta registrado", None))
     # retranslateUi
 
