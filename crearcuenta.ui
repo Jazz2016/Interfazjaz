@@ -57,7 +57,7 @@
 color: rgb(0, 0, 0);</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_2">
+   <widget class="QTextEdit" name="textEdit2">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -84,7 +84,7 @@ color: rgb(0, 0, 0);</string>
      <string>Ingresa contraseña nuevamente</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_3">
+   <widget class="QTextEdit" name="textEdit3">
     <property name="geometry">
      <rect>
       <x>130</x>

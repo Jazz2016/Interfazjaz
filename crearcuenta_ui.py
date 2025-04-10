@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'crearcuenta.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.3
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -38,23 +38,23 @@ class Ui_MainWindow(object):
         self.textEdit.setGeometry(QRect(130, 90, 281, 31))
         self.textEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
-        self.textEdit_2 = QTextEdit(self.centralwidget)
-        self.textEdit_2.setObjectName(u"textEdit_2")
-        self.textEdit_2.setGeometry(QRect(130, 180, 281, 31))
-        self.textEdit_2.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.textEdit2 = QTextEdit(self.centralwidget)
+        self.textEdit2.setObjectName(u"textEdit2")
+        self.textEdit2.setGeometry(QRect(130, 180, 281, 31))
+        self.textEdit2.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
         self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(200, 230, 171, 21))
-        self.textEdit_3 = QTextEdit(self.centralwidget)
-        self.textEdit_3.setObjectName(u"textEdit_3")
-        self.textEdit_3.setGeometry(QRect(130, 270, 281, 31))
-        self.textEdit_3.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.textEdit3 = QTextEdit(self.centralwidget)
+        self.textEdit3.setObjectName(u"textEdit3")
+        self.textEdit3.setGeometry(QRect(130, 270, 281, 31))
+        self.textEdit3.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(220, 330, 121, 31))
-        self.pushButton.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.btnRegistrar = QPushButton(self.centralwidget)
+        self.btnRegistrar.setObjectName(u"btnRegistrar")
+        self.btnRegistrar.setGeometry(QRect(220, 330, 121, 31))
+        self.btnRegistrar.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "background-color: rgb(170, 170, 255);")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -75,6 +75,6 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"Nombre Usuario", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Ingresa contrase\u00f1a", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Ingresa contrase\u00f1a nuevamente", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Registrar", None))
+        self.btnRegistrar.setText(QCoreApplication.translate("MainWindow", u"Registrar", None))
     # retranslateUi
 
