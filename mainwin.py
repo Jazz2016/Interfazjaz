@@ -41,7 +41,7 @@ class LoginWindow(QMainWindow):
                 # Mostrar mensaje de éxito en el QLabel de la ventana de registro
                 self.new_user_ventana.label_4.setText("Usuario registrado correctamente.")
                 self.new_user_ventana.label_4.setStyleSheet("color: green;")
-                self.new_user_ventana.close()  # Cerrar ventana después del registro
+                # No cerramos la ventana inmediatamente, dejamos que el usuario vea el mensaje.
 
             except pymysql.IntegrityError:
                 # Si hay un error de integridad, es porque el usuario ya existe
