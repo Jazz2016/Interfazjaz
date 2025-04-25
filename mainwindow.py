@@ -1,22 +1,28 @@
-from PyQt6.QtWidgets import QApplication, QLabel, QMainWindow, QGraphicsDropShadowEffect
+from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QGraphicsDropShadowEffect
 from PyQt6.QtGui import QColor
+from PyQt6 import uic
 import sys
 
-class Ventana(QMainWindow):
+class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Texto con sombra")
 
-        # Crear etiqueta
-        label = QLabel("Texto con sombra", self)
-        label.setStyleSheet("font-size: 24px;")
-        label.move(50, 50)
+        # Cargar el archivo .ui
+        uic.loadUi("login.ui", self)
+
+        # Acceder al QLabel que tiene el texto (asegúrate que se llama así en el .ui)
+        label = self.findChild(QLabel, "labelTitulo")
 
         # Crear sombra
-        sombra = QGraphicsDropShadowEffect()
+        sombra = QGraphicsDropShadowEffect(self)
         sombra.setBlurRadius(10)
-        sombra.setColor(QColor(0, 0, 0, 180))
-        sombra.setOffset(4, 4)
+        sombra.setColor(QColor(0, 0, 0, 160))
+        sombra.setOffset(3, 3)
 
-        # Aplicar a la etiqueta
-        label
+        # Aplicar sombra
+        label.setGraphicsEffect(sombra)
+
+app = QApplication(sys.argv)
+ventana = LoginWindow()
+ventana.show()
+sys.exit(app.exec())
