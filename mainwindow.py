@@ -3,7 +3,7 @@ from PyQt5.QtGui import QColor
 from PyQt5 import uic
 import sys
 
-class MainWindow(QMainWindow):
+class mainwindow(Qmainwindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("Login6.ui", self)  # tu archivo .ui
