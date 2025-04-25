@@ -11,7 +11,7 @@ class LoginWindow(QMainWindow):
         uic.loadUi("Login6.ui", self)
 
         # Acceder al QLabel que tiene el texto (asegúrate que se llama así en el .ui)
-        label = self.findChild(QLabel, "labelTitulo")
+        label = self.findChild(QLabel, "label_4")
 
         # Crear sombra
         sombra = QGraphicsDropShadowEffect(self)
