@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QLabel, QGraphicsDropShadowEffect, QApplication, QMainWindow
+from PyQt5.QtWidgets import QLabel, QGraphicsDropShadowEffect, QApplication, Qmainwindow
 from PyQt5.QtGui import QColor
 from PyQt5 import uic
 import sys
@@ -21,6 +21,6 @@ class mainwindow(Qmainwindow):
         label.setGraphicsEffect(shadow)
 
 app = QApplication(sys.argv)
-window = MainWindow()
+window = mainwindow()
 window.show()
 sys.exit(app.exec_())
