@@ -8,7 +8,7 @@ class LoginWindow(QMainWindow):
         super().__init__()
 
         # Cargar el archivo .ui
-        uic.loadUi("login.ui", self)
+        uic.loadUi("Login6.ui", self)
 
         # Acceder al QLabel que tiene el texto (asegúrate que se llama así en el .ui)
         label = self.findChild(QLabel, "labelTitulo")
